@@ -4,11 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Fetch A Buzz!</title>
 </head>
-<body>
-    <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui eius aliquid dolore ipsum pariatur? Provident aliquam mollitia ipsam, cupiditate quisquam inventore id ratione tenetur dolores qui assumenda aut incidunt.
+<body></body>
+    <nav>
+        <div class="nav-wrapper teal lighten-2">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="">List of Drinks</a></li>
+            <li><a href="">List of Movies</a></li>
+            <li><a href="">Random</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="row ">
+
+        <div class="col s12 l4 blue darken-3">
+            <!-- Choose a drink panel -->
+            <div id="spirits" class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choose Your Spirit</option>
+                    <option value="whiskey">Whiskey</option>
+                    <option value="vodka">Vodka</option>
+                    <option value="gin">Gin</option>
+                    <option value="rum">Rum</option>
+                    <option value="tequila">Tequila</option>
+                </select>
+            </div>
+            <div id="whiskey" class="input-field col s12 hide">
+                <select>
+                    <option value="" disabled selected>Choose Your Whiskey Drink</option>
+                    <option value="whiskey">Old Fashion</option>
+                    <option value="vodka">Hot Toddy</option>
+                    <option value="gin">Harvest Sour</option>
+                    <option value="rum">King of Manhattan</option>
+                    <option value="tequila">Whiskey and Cola</option>
+                </select>
+            </div>
+            <div id="vodka" class="input-field col s12 hide">
+                <select>
+                    <option value="" disabled selected>Choose Your Vodka Drink</option>
+                    <option value="whiskey">Cosmopolitan</option>
+                    <option value="vodka">Screwdriver</option>
+                    <option value="gin">Kamikaze</option>
+                    <option value="rum">White Russian</option>
+                    <option value="tequila">Martini</option>
+                </select>
+            </div>
+            <div id="gin" class="input-field col s12 hide">
+                <select>
+                    <option value="" disabled selected>Choose Your Gin Drink</option>
+                    <option value="whiskey">Gin and Tonic</option>
+                    <option value="vodka">Tom Collins Cocktail</option>
+                    <option value="gin">Gin Gimlet</option>
+                    <option value="rum">Gin Rickey</option>
+                    <option value="tequila">Gin Gin Mule</option>
+                </select>
+            </div>
+            <div id="rum" class="input-field col s12 hide">
+                <select>
+                    <option value="" disabled selected>Choose Your Rum Drink</option>
+                    <option value="whiskey">Hemingway Daiquiri</option>
+                    <option value="vodka">Mai Tai</option>
+                    <option value="gin">Piña Colada</option>
+                    <option value="rum">Sideline Sipper</option>
+                    <option value="tequila">Watermelon Rush</option>
+                </select>
+            </div>
+            <div id="tequila" class="input-field col s12 hide">
+                <select>
+                    <option value="" disabled selected>Choose Your Tequila Drink</option>
+                    <option value="whiskey">Tequila Sunrise</option>
+                    <option value="vodka">Margarita</option>
+                    <option value="gin">Paloma</option>
+                    <option value="rum">Tequini</option>
+                    <option value="tequila">Brave Bull</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col s12 l8 blue lighten-3">
+            <h2> Content panel </h2>
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
