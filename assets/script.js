@@ -11,7 +11,19 @@ var tequila = document.getElementById("#userTequila");
 var contentBox = document.getElementById("#content")
 
 $(document).ready(function(){
-    $('select').formSelect();
+  $('select').formSelect();
+});
+
+fetch('http://www.omdbapi.com/?apikey=90c34782&t=star+wars', {
+  method: 'GET', 
+  credentials: 'same-origin', 
+  redirect: 'follow', 
+})
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
   });
 
 // Attempting to get second select dropdown to appear
