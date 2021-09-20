@@ -8,90 +8,53 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Fetch A Buzz!</title>
 </head>
-<body></body>
-    <nav>
-        <div class="nav-wrapper  deep-orange darken-4">
-            <a href="#" class="brand-logo"><i class="fas fa-cocktail"></i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">List of Drinks</a></li>
-            <li><a href="badges.html">List of Movies</a></li>
-            <li><a href="collapsible.html">Random</a></li>
+
+<body>
+    <div id="container">
+        <nav>           
+                    <ul>
+                    <li><a href="#">Vodka</a>
+                    <ul>
+                        <li class="secondclick"><a href="#">White Russian</a></li>
+                        <li class="secondclick"><a href="#">Vesper</a></li>
+                        <li class="secondclick"><a href="#">Cosmopolitan</a></li>
+                        <li class="secondclick"><a href="#">Vodka Martini</a></li>
+                    
+                    </ul>
+                    <li><a href="#">Gin</a>           
+                    <ul>
+                        <li class="secondclick"><a href="#">French 75</a></li>
+                        <li class="secondclick"><a href="#">Gin Martini</a></li>
+                        <li class="secondclick"><a href="#">Singapore Sling</a></li>
+                    </ul>
+                    <li><a href="#">Whiskey</a>           
+                        <ul>
+                            <li class="secondclick"><a href="#">Whiskey Sour</a></li>
+                            <li class="secondclick"><a href="#">Old Fashioned</a></li>
+                            <li class="secondclick"><a href="#">Manhattan</a></li>
+                        </ul>
+                    <li><a href="#">Scotch</a>           
+                        <ul>
+                            <li class="secondclick"><a href="#">Lagavulin</a></li>
+                            <li class="secondclick"><a href="#">J&B</a></li>
+                        </ul>
+                    <li><a href="#">Tequila</a>           
+                        <ul>
+                            <li class="secondclick"><a href="#">Margartia</a></li>
+                            <li class="secondclick"><a href="#">Tequila Slammer</a></li>
+                        </ul>
             </ul>
-        </div>
-    </nav>
-    
-    <div class="row ">
-
-        <div class="col s12 l4 deep-orange darken-1">
-            <!-- Choose a drink panel -->
-            <div class="input-field col s12">
-                <select id="userSpirits">
-                    <option value="" disabled selected>Choose Your Spirit</option>
-                    <option value="whiskey">Whiskey</option>
-                    <option value="vodka">Vodka</option>
-                    <option value="gin">Gin</option>
-                    <option value="rum">Rum</option>
-                    <option value="tequila">Tequila</option>
-                </select>
-            </div>
-            <div id="userWhiskey" class="input-field col s12 hide">
-                <select>
-                    <option value="" disabled selected>Choose Your Whiskey Drink</option>
-                    <option value="whiskey">Old Fashion</option>
-                    <option value="vodka">Hot Toddy</option>
-                    <option value="gin">Harvest Sour</option>
-                    <option value="rum">King of Manhattan</option>
-                    <option value="tequila">Whiskey and Cola</option>
-                </select>
-            </div>
-            <div id="userVodka" class="input-field col s12 hide">
-                <select>
-                    <option value="" disabled selected>Choose Your Vodka Drink</option>
-                    <option value="whiskey">Cosmopolitan</option>
-                    <option value="vodka">Screwdriver</option>
-                    <option value="gin">Kamikaze</option>
-                    <option value="rum">White Russian</option>
-                    <option value="tequila">Martini</option>
-                </select>
-            </div>
-            <div id="userGin" class="input-field col s12 hide">
-                <select>
-                    <option value="" disabled selected>Choose Your Gin Drink</option>
-                    <option value="whiskey">Gin and Tonic</option>
-                    <option value="vodka">Tom Collins Cocktail</option>
-                    <option value="gin">Gin Gimlet</option>
-                    <option value="rum">Gin Rickey</option>
-                    <option value="tequila">Gin Gin Mule</option>
-                </select>
-            </div>
-            <div id="userRum" class="input-field col s12 hide">
-                <select>
-                    <option value="" disabled selected>Choose Your Rum Drink</option>
-                    <option value="whiskey">Hemingway Daiquiri</option>
-                    <option value="vodka">Mai Tai</option>
-                    <option value="gin">Piña Colada</option>
-                    <option value="rum">Sideline Sipper</option>
-                    <option value="tequila">Watermelon Rush</option>
-                </select>
-            </div>
-            <div id="userTequila" class="input-field col s12 hide">
-                <select>
-                    <option value="" disabled selected>Choose Your Tequila Drink</option>
-                    <option value="whiskey">Tequila Sunrise</option>
-                    <option value="vodka">Margarita</option>
-                    <option value="gin">Paloma</option>
-                    <option value="rum">Tequini</option>
-                    <option value="tequila">Brave Bull</option>
-                </select>
-            </div>
-        </div>
-
-        <div id="content" class="col s12 l8 grey darken-1">
-            
-            <!--<p> Content panel </p>-->
-
-        </div>
+            <a href="#"<i class="fas fa-cocktail"></i></a>
+        </nav>
+        <h1>Blockbusters & Beverages</h1>      
     </div>
+
+    <div class= "drink-card">
+        <div id="drink"></div>
+        <div id="overlay"></div>
+    </div>
+</body>
+
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
