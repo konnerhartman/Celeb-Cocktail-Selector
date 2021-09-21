@@ -63,3 +63,54 @@ function fetchData() {
     
   });
 }  
+
+fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("error");
+    }
+  })
+  .then(data => displaydrink(data))
+  .catch((error) => console.error("error", error));
+ 
+function displaydrink(data) {
+ 
+  var drink = data.drinks[0];
+  var drinkDiv = document.getElementById("drink");    
+ 
+  // renders the name of the drink
+  var drinkName = drink.strDrink;
+  var h3 = document.createElement("h3");
+  drinkDiv.appendChild(h3);
+ 
+  // renders the image of the drink
+  var drinkImg = document.createElement("img");
+  drinkImg.src = drink.strDrinkThumb;
+  drinkDiv.appendChild(drinkImg);
+  document.body.style.backgroundImage = "url('" + drink.strDrinkThumb + "')";
+ 
+  // renders the ingredients of the drink 
+  var drinkIngredients = document.createElement("ul");
+  drinkDiv.appendChild(drinkIngredients);
+ 
+  var getIngredients = Object.keys(drink)
+    .filter(function (ingredient) {
+      return ingredient.indexOf("strIngredient") == 0;
+    })
+    .reduce(function (ingredients, ingredient) {
+      if (drink[ingredient] != null) {
+        ingredients[ingredient] = drink[ingredient];
+      }
+      return ingredients;
+    }, {});
+ 
+  for (let key in getIngredients) {
+    let value = getIngredients[key];
+    listItem = document.createElement("li");
+    listItem.innerHTML = value;
+    drinkIngredients.appendChild(listItem);
+  }
+ 
+}
