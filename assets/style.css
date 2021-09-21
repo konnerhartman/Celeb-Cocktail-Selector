@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-image: url('images/martini.jpg');
+    background-image: url('./images/martini.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	line-height: 32px;
@@ -107,9 +107,9 @@ nav ul ul ul li {
 	background-color: black
 }
 
-.drink-card {
+/* .drink-card {
 	position:
-}
+} */
 
 #drink img {
 	padding: 5px;
