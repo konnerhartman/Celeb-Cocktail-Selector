@@ -1,8 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 body {
-    background-image: url('https://images.unsplash.com/photo-1587223962930-cb7f31384c19?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80');
+    background-image: url('images/martini.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	line-height: 32px;
+	color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	}
+
+h1 {
+	text-align: left;
+	font-size: 40px;
+	background-color: black;
 }
 
-i {
-    padding-left: 15px;
+p {
+	text-align: center;
+	font-size: 20px;
+	background-color: black;
+}
+
+i { 
+	padding: 100 px
+}
+	
+a {
+	color: #FFF;
+}
+
+
+#container {
+	margin: 0 auto;
+}
+
+nav {
+	margin: 40px 0;
+	background-color: #E64A19;
+}
+
+nav ul {
+	padding: 0;
+    margin: 0;
+	list-style: none;
+	position: relative;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #E64A19;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+/* Dropdown hidden */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px; 
+}
+	
+/*Hover effect*/ 
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/*Dropdown menu */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
 }
 
