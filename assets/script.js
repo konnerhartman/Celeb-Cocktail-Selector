@@ -67,9 +67,9 @@ function fetchData() {
       // .length is the number of drinks 
       // .length > 1, used 1 because the first item of the index of DrinkContent is Blockbusters and Beverages, 
       // we need to keep it; then use .removeChild to remove the previous child (drink's name, img, ingredients)
-      // while (contentDiv.childNodes.length > 1) {
-      //   contentDiv.removeChild(contentDiv.lastChild);
-      // }
+      while (contentDiv.childNodes.length > 1) {
+        contentDiv.removeChild(contentDiv.lastChild);
+      }
       var drinkName = drinkContent.strDrink;
       var title = document.createElement("h3");
       title.innerHTML = drinkName;
@@ -90,7 +90,7 @@ function fetchData() {
         .filter(function (ingredient) {
           return ingredient.indexOf("strIngredient") == 0;
         })
-      // reduce() method returns a single value which is an accumulated result => returns the accumulated result 
+      // reduce() method returns a single value which is an accumulated result => returns the accumulated result
         .reduce(function (ingredients, ingredient) {
           if (drinkContent[ingredient] != null) {
             ingredients[ingredient] = drinkContent[ingredient];
