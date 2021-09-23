@@ -9,7 +9,6 @@ body {
 	width: 100%;
 }
 
-
 h2 {
 	text-align: left;
 	font-size: 40px;
@@ -46,12 +45,12 @@ nav ul {
     margin: 0;
 	list-style: none;
 	position: relative;
-	}
+}
 	
 nav ul li {
 	display: inline-block;
 	background-color: #E64A19;
-	}
+}
 
 nav a {
 	display: block;
@@ -62,18 +61,15 @@ nav a {
 	text-decoration: none;
 }
 
-
 nav ul ul {
 	display: none;
 	position: absolute; 
 	top: 60px; 
 }
-	
 
 nav ul li:hover > ul {
 	display: inherit;
 }
-	
 
 nav ul ul li {
 	width: 150px;
@@ -108,7 +104,6 @@ nav ul ul ul li {
 	padding: 5px;
 	margin-left: 20px;
 	width: 200px;
-	
 }
 
 #drinkContent {
@@ -129,15 +124,9 @@ nav ul ul ul li {
 
 #drink ul {
 	list-style: none;
-
 }
 
 #drinkContent li {
 	font-size: 15px;
 	font-weight: bolder;
 }
-
-
-
-
-
