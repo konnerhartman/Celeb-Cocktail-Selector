@@ -2,22 +2,72 @@
 // cocktails - https://www.thecocktaildb.com/api/json/v1/1/search.php?s=
 // movies - http://www.omdbapi.com/?apikey=90c34782&t=
 
-var spirits = document.getElementById("userSpirits");
-var whiskey = document.getElementById("userWhiskey");
-var vodka = document.getElementById("userVodka");
-var gin = document.getElementById("userGin");
-var rum = document.getElementById("userRum");
-var tequila = document.getElementById("userTequila");
-var contentBox = document.getElementById("content")
-
 /*$(document).ready(function(){
   $('select').formSelect();
 });*/
 
-
+var movie_drink = [
+  {
+  movie_name : "Big Lebowski",
+  drink_name : "White Russian"
+  },
+  {
+  movie_name : "The Blues Brothers",
+  drink_name : "Orange Whip"
+  },
+  {
+    movie_name : "Casino Royale",
+    drink_name : "Vesper"
+     
+  },
+  {
+    movie_name : "Mad Men",
+    drink_name : "Old-Fashioned"
+    
+  },
+  {
+    movie_name : "Some Like it Hot",
+    drink_name : "Manhattan"
+    
+  },
+  {
+    movie_name : "Groundhog Day",
+    drink_name : "Vermouth"
+    
+  },
+  {
+    movie_name : "Sex and the City",
+    drink_name : "Cosmopolitans"
+    
+  },
+  {
+    movie_name : "Casablanca",
+    drink_name : "French 75"
+    
+  },
+  {
+    movie_name : "Once Upon A Time In Hollywood",
+    drink_name : "Whiskey Sour"
+    
+  },
+  {
+    movie_name : "American Psycho",
+    drink_name : "A. J."
+    
+  },
+  {
+    movie_name : "Betty Blue",
+    drink_name : "Tequila Slammer"
+    
+  }
+];
 // Fetches movie
-function fetchDataMovie() {
-  fetch('http://www.omdbapi.com/?apikey=90c34782&t=casino+royale', {
+function fetchDataMovie (movieName) {
+
+    console.log($(this).children('a').text());
+    var movie = $(this).children('a').text();
+   
+  fetch('http://www.omdbapi.com/?apikey=90c34782&t=' + movieName, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow',
@@ -27,10 +77,39 @@ function fetchDataMovie() {
     })
     .then(function (data) {
       console.log(data);
+      console.log(data.Title);
+    // render movie name's data
+    var movieContent = data;
+    var movieDiv = document.getElementById("movieContent");
+
+    // used .childNodes for the collection of all the movies selected by a user when they click the list
+    // .length is the number of movies
+    // .length > 1, used 1 because the first item of the index of movieContent is Blockbusters, 
+    // we need to keep it; then use .removeChild to remove the previous child (movie's name, poster, actors)
+    while (movieDiv.childNodes.length > 1) {
+      movieDiv.removeChild(movieDiv.lastChild);
+    }
+    var movieName = movieContent.Title;
+    var titleEl = document.createElement("h3");
+    titleEl.innerHTML = movieName;
+    movieDiv.appendChild(titleEl);
+
+    // render poster's data
+    var moviePoster = document.createElement("poster");
+    moviePoster.src = movieContent.Poster;
+    movieDiv.appendChild(moviePoster);
+    document.body.style= "url('" + movieContent.Poster + "')";
+
+    // render movie's plot
+    var moviePlot = movieContent.Plot;
+    var plotEl = document.createElement("h3");
+    plotEl.innerHTML = moviePlot;
+    movieDiv.appendChild(plotEl);
+
 
     });
 }
-fetchDataMovie();
+
 
 // Fetches cocktail
 function fetchData() {
@@ -48,17 +127,7 @@ function fetchData() {
     .then(function (data) {
       console.log(data);
 
-      // document.getElementById("drinkContent").innerHTML = data;
-      // showDrinkContent = content => {
-      // var contentDiv = document.getElementById("drinkContent");
-
-      //   content.forEach(drink => {
-      //     var drinkEl = document.createElement('p');
-      //     drinkEl.innerText = `strIngredient:
-      //     ${drink.strIngredient1}`;
-      //     contentDiv.append(drinkEl);
-      //     });
-      //   }
+      
       // render name's data
       var drinkContent = data.drinks[0];
       var contentDiv = document.getElementById("drinkContent");
@@ -73,6 +142,11 @@ function fetchData() {
       var drinkName = drinkContent.strDrink;
       var title = document.createElement("h3");
       title.innerHTML = drinkName;
+      drink_selected = drinkName;
+
+      var movie_related = movie_drink.filter(function (Object) {
+        return Object.drink_name = 
+      })
       contentDiv.appendChild(title);
 
       // render image's data
@@ -112,19 +186,6 @@ $(this).children('a').text;
 $('.secondclick').on('click', fetchData);
 
 
-// Midnight note:
-// *Things done:
-
-// 1. changed some drinks because some of them are null when rendering
-// 2. was able to display drink's data
-// 3. fixed the content displayed on the screen (only display 1 item at a time, 
-// before that, the previous drinks stay on the page)
-// 4. 
-
-// *Things to be done on Wednesday
-// 1. sort the movies out to match with drinks
-// 2. pull data from movie API
-// 3. need to update new version of jQuery from 1 to 3
 
 
 
@@ -142,21 +203,6 @@ $('.secondclick').on('click', fetchData);
 
 
 
-// Big Lebowski :: White Russian (worked)
-// The Blues Brothers :: Orange Whip (worked, added to the html)
-// Casino Royale :: Vodka "Vesper" Martini (worked)
-// Mad Men :: Old-Fashioned (worked)
-// Some Like it Hot ::  Manhattan (worked)
-// Groundhog Day :: Sweet Vermouth on the Rocks with a Twist (worked, had to change the name to "Vermouth")
-// Lost in Translation :: Suntory Whiskey     (null)
-// Sex and the City :: Cosmopolitans (worked)
-// Casablanca :: French 75 (worked)
-// Once Upon A Time In Hollywood :: Whiskey Sour (worked)
-// American Psycho ::  J&B straight and a Corona (worked if changed to A. J.)
-// Parks & Rec // Ron Swanson :: Lagavulin Single Malt Scotch Whisky (null  => deleted the li)
-// Silence of the Lambs ::  Chianti (N/A wine not cocktail)
-// Betty Blue :: Tequila Slammer
-// also removed Gin Martini
 
 
 
@@ -168,56 +214,10 @@ $('.secondclick').on('click', fetchData);
 
 
 
-// fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-//   .then((response) => {
-//     if (response.ok) {
-//       return response.json();
-//     } else {
-//       throw new Error("error");
-//     }
-//   })
-//   .then(data => displaydrink(data))
-//   .catch((error) => console.error("error", error));
 
-// function displaydrink(data) {
 
-//   var drink = data.drinks[0];
-//   var drinkDiv = document.getElementById("drink");    
 
-//   // renders the name of the drink
-//   var drinkName = drink.strDrink;
-//   var h3 = document.createElement("h3");
-//   drinkDiv.appendChild(h3);
 
-//   // renders the image of the drink
-//   var drinkImg = document.createElement("img");
-//   drinkImg.src = drink.strDrinkThumb;
-//   drinkDiv.appendChild(drinkImg);
-//   document.body.style.backgroundImage = "url('" + drink.strDrinkThumb + "')";
-
-//   // renders the ingredients of the drink 
-//   var drinkIngredients = document.createElement("ul");
-//   drinkDiv.appendChild(drinkIngredients);
-
-//   var getIngredients = Object.keys(drink)
-//     .filter(function (ingredient) {
-//       return ingredient.indexOf("strIngredient") == 0;
-//     })
-//     .reduce(function (ingredients, ingredient) {
-//       if (drink[ingredient] != null) {
-//         ingredients[ingredient] = drink[ingredient];
-//       }
-//       return ingredients;
-//     }, {});
-
-//   for (let key in getIngredients) {
-//     let value = getIngredients[key];
-//     listItem = document.createElement("li");
-//     listItem.innerHTML = value;
-//     drinkIngredients.appendChild(listItem);
-//   }
-
-// }
 
 
 
