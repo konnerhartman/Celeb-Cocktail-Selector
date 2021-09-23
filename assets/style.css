@@ -1,9 +1,7 @@
-
-
-
 body {
     background-image: url('./images/martini.jpg');
 	background-size: cover;
+	background-color: black;
 	background-repeat: no-repeat;
 	line-height: 32px;
 	color: #ffffff;
@@ -114,14 +112,26 @@ nav ul ul ul li {
 	padding: 5px;
 	width: 200px;
 	margin-left: 20px;
-	
-	
 }
+
+#movieContent img {
+	padding: 5px;
+	margin-left: 20px;
+}
+
 #drinkContent {
 	display:block;
 	border-radius: 8px;
 	background-color:transparent;
-	color: white;	
+	color:blue;
+	text-align: center;
+}
+
+#movieContent {
+	display: block;
+	border-radius: 8px;
+	background-color:transparent;
+	color:blue;
 	text-align: center;
 }
 
