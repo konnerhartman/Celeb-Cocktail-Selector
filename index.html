@@ -10,67 +10,59 @@
 </head>
 
 <body>
-    <div id="container">
-        <nav>           
-                    <ul>
-                    <li><a href="#">Vodka</a>
-                    <ul>
-                        <li class="secondclick"><a href="#">White Russian</a></li>
-                        <li class="secondclick"><a href="#">Orange Whip</a></li>
-                        <li class="secondclick"><a href="#">Vesper</a></li>
-                        <li class="secondclick"><a href="#">Cosmopolitan</a></li>
-                        <li class="secondclick"><a href="#">Vodka Martini</a></li>
-                    
-                    </ul>
-                    <li><a href="#">Gin</a>           
-                    <ul>
-                        <li class="secondclick"><a href="#">French 75</a></li>                        
-                        <li class="secondclick"><a href="#">Singapore Sling</a></li>
-                    </ul>
-                    <li><a href="#">Whiskey</a>           
-                        <ul>
-                            <li class="secondclick"><a href="#">Whiskey Sour</a></li>
-                            <li class="secondclick"><a href="#">Old Fashioned</a></li>
-                            <li class="secondclick"><a href="#">Manhattan</a></li>
-                            
-                        </ul>
-                    <li><a href="#">Scotch</a>           
-                        <ul>
-                            
-                            <li class="secondclick"><a href="#">A. J.</a></li>
-                            <li class="secondclick"><a href="#">Vermouth</a></li>
-                            
-                        </ul>
-                    <li><a href="#">Tequila</a>           
-                        <ul>
-                            <li class="secondclick"><a href="#">Margarita</a></li>
-                            <li class="secondclick"><a href="#">Tequila Slammer</a></li>
-                        </ul>
-            </ul>
-            <a href="#" <i class="fas fa-cocktail"></i></a>
-        </nav>
-        <!--<h1>Blockbusters & Beverages</h1>-->      
-    </div>
+    <nav>           
+        <ul>
+            <li><a href="#">Vodka</a>
+                <ul>
+                    <li class="secondclick"><span class = "hide">Big Lebowski</span><a href="#">White Russian</a></li>
+                    <li class="secondclick"><span class = "hide">The Blues Brothers</span><a href="#">Orange Whip</a></li>
+                    <li class="secondclick"><span class = "hide">Casino Royale</span><a href="#">Vesper</a></li>
+                    <li class="secondclick"><span class = "hide">Sex And The City</span><a href="#">Cosmopolitan</a></li>
+                    <li class="secondclick"><span class = "hide">Casino Royale</span><a href="#">Vodka Martini</a></li>
+                
+                </ul>
+            <li><a href="#">Gin</a>           
+                <ul>
+                    <li class="secondclick"><span class = "hide">Casablanca</span><a href="#">French 75</a></li>                        
+                    <li class="secondclick"><span class = "hide"></span><a href="#">Singapore Sling</a></li>
+                </ul>
+            <li><a href="#">Whiskey</a>           
+                <ul>
+                    <li class="secondclick"><span class = "hide">Once Upon A Time In Hollywood</span><a href="#">Whiskey Sour</a></li>
+                    <li class="secondclick"><span class = "hide">Mad Men</span><a href="#">Old Fashioned</a></li>
+                    <li class="secondclick"><span class = "hide">Some Like it Hot</span><a href="#">Manhattan</a></li>                   
+                </ul>
+            <li><a href="#">Scotch</a>           
+                <ul>
+                    <li class="secondclick"><span class = "hide">American Psycho</span><a href="#">A. J.</a></li>
+                    <li class="secondclick"><span class = "hide">Groundhog Day</span><a href="#">Vermouth</a></li>        
+                </ul>
+            <li><a href="#">Tequila</a>           
+                <ul>
+                    <li class="secondclick"><span class = "hide"></span><a href="#">Margarita</a></li>
+                    <li class="secondclick"><span class = "hide">Betty Blue</span><a href="#">Tequila Slammer</a></li>
+                </ul>
+</ul>
+<a href="#" <i class="fas fa-cocktail"></i></a>
+</nav>
+    <div id="container">        
+        <div class="row">
+            <div class="col 6" id="drinkContent"><h2></h2>
+                
+                <div id="overlay">
 
-    <div class="row">
-        <div class="col s12"><span class="flow-text"></span></div>
-        <div class="col s6" id="drinkContent"><h2>Beverages</h2>
-            
-            <div id="overlay">
-
+                </div>
             </div>
+
+            <div class="col 6" id="movieContent"><h2></h2>
+                
+                <div id="overlay">
+
+                </div>
+            </div>            
         </div>
-        <div class="col s6" id="movieContent"><h2>Blockbusters</h2></div>
-        
     </div>
-
-    <!--<div class="drink-card">
-        <div id="drink"></div>
-        <div id="overlay"></div>
-    </div>-->
-</body>
-
-
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://kit.fontawesome.com/2a07effbf4.js" crossorigin="anonymous"></script>

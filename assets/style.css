@@ -1,13 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-html {
-	height: 100%;
-}
-
 body {
-	display:flexbox;
     background-image: url('./images/martini.jpg');
 	background-size: cover;
+	background-color: black;
 	background-repeat: no-repeat;
 	line-height: 32px;
 	color: #ffffff;
@@ -16,7 +10,7 @@ body {
 	}
 
 
-h1 {
+h2 {
 	text-align: left;
 	font-size: 40px;
 	background-color: black;
@@ -94,21 +88,21 @@ nav ul ul ul li {
 }
 
 #overlay {
-	
-	position: flex;
-	top: 15px;
+	background-image: url('images/martini.jpg');
+	position: fixed;
+	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
 }
 
-#drink {
+/* #drink {
 	max-width: 350px;
 	text-align: center;
 	color: #fff;
 	background-color: black
-}
+} */
 
 /* .drink-card {
 	position:
@@ -116,19 +110,28 @@ nav ul ul ul li {
 
 #drinkContent img {
 	padding: 5px;
-	width: 100px;
+	width: 200px;
 	margin-left: 20px;
-	
-	
 }
+
+#movieContent img {
+	padding: 5px;
+	margin-left: 20px;
+}
+
 #drinkContent {
 	display:block;
 	border-radius: 8px;
 	
 	color:blue;
-	
-	
-	
+	text-align: center;
+}
+
+#movieContent {
+	display: block;
+	border-radius: 8px;
+	background-color:transparent;
+	color:blue;
 	text-align: center;
 }
 
