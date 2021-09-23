@@ -52,6 +52,7 @@ function fetchData() {
     redirect: 'follow',
 
   })
+
   .then(function (response) {
     return response.json();
   })
