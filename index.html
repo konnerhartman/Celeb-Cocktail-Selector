@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,52 +13,50 @@
 
 <body>
     <!-- Nav Bar with spirit choices -->
-    <nav>  
-        <ul>  
+    <nav>
+        <ul>
             <li><a href="#">Vodka</a>
                 <!-- List of vodka drinks -->
                 <ul>
                     <!-- We used a hidden <span> to connect the movie js function to the drink function with on click -->
-                    <li class="onClick"><span class = "hide">Fletch</span><a href="#">Bloody Mary</a></li>     
-                    <li class="onClick"><span class = "hide">Sex And The City</span><a href="#">Cosmopolitan</a></li>
-                    <li class="onClick"><span class = "hide">The Blues Brothers</span><a href="#">Orange Whip</a></li>               
-                    <li class="onClick"><span class = "hide">Jackie Brown</span><a href="#">Screwdriver</a></li>
-                    <li class="onClick"><span class = "hide">Cocktail</span><a href="#">Sex on the Beach</a></li>
-                    <li class="onClick"><span class = "hide">Casino Royale</span><a href="#">Vesper</a></li>                                        
-                    <li class="onClick"><span class = "hide">Casino Royale</span><a href="#">Vodka Martini</a></li>                
-                    <li class="onClick"><span class = "hide">Big Lebowski</span><a href="#">White Russian</a></li>            
-                                    
+                    <li class="onClick"><span class="hide">Fletch</span><a href="#">Bloody Mary</a></li>
+                    <li class="onClick"><span class="hide">Sex And The City</span><a href="#">Cosmopolitan</a></li>
+                    <li class="onClick"><span class="hide">The Blues Brothers</span><a href="#">Orange Whip</a></li>
+                    <li class="onClick"><span class="hide">Jackie Brown</span><a href="#">Screwdriver</a></li>
+                    <li class="onClick"><span class="hide">Cocktail</span><a href="#">Sex on the Beach</a></li>
+                    <li class="onClick"><span class="hide">Casino Royale</span><a href="#">Vesper</a></li>
+                    <li class="onClick"><span class="hide">Casino Royale</span><a href="#">Vodka Martini</a></li>
+                    <li class="onClick"><span class="hide">Big Lebowski</span><a href="#">White Russian</a></li>
+
                 </ul>
             </li>
             <li><a href="#">Gin</a>
-                 <!-- List of gin drinks -->
-                 <ul>
-                    <li class="onClick"><span class = "hide">Casablanca</span><a href="#">French 75</a></li>                        
-                    <li class="onClick"><span class = "hide">Fear and Loathing in Las Vegas</span><a href="#">Singapore Sling</a></li>
+                <!-- List of gin drinks -->
+                <ul>
+                    <li class="onClick"><span class="hide">Casablanca</span><a href="#">French 75</a></li>                    
                 </ul>
             </li>
             <li><a href="#">Whiskey</a>
-                 <!-- List of whiskey drinks -->
-                 <ul>
-                    <li class="onClick"><span class = "hide">Some Like it Hot</span><a href="#">Manhattan</a></li>
-                    <li class="onClick"><span class = "hide">It's a Mad Mad Mad Mad World</span><a href="#">Old Fashioned</a></li>
-                    <li class="onClick"><span class = "hide">Saturday Night Fever</span><a href="#">7 & 7</a></li>
-                    <li class="onClick"><span class = "hide">The Bonfire of the Vanities</span><a href="#">Sidecar</a></li>
-                    <li class="onClick"><span class = "hide">The Seven Year Itch</span><a href="#">Whiskey Sour</a></li>               
-                 </ul>
+                <!-- List of whiskey drinks -->
+                <ul>
+                    <li class="onClick"><span class="hide">Some Like it Hot</span><a href="#">Manhattan</a></li>
+                    <li class="onClick"><span class="hide">Saturday Night Fever</span><a href="#">7 & 7</a></li>
+                    <li class="onClick"><span class="hide">The Bonfire of the Vanities</span><a href="#">Sidecar</a></li>
+                    <li class="onClick"><span class="hide">The Seven Year Itch</span><a href="#">Whiskey Sour</a></li>
+                </ul>
             </li>
             <li><a href="#">Scotch</a>
                 <!-- List of scotch drinks -->
                 <ul>
-                    <li class="onClick"><span class = "hide">American Psycho</span><a href="#">A. J.</a></li>
-                    <li class="onClick"><span class = "hide">Groundhog Day</span><a href="#">Vermouth</a></li>        
+                    <li class="onClick"><span class="hide">American Psycho</span><a href="#">A. J.</a></li>
+                    <li class="onClick"><span class="hide">Groundhog Day</span><a href="#">Vermouth</a></li>
                 </ul>
             </li>
             <li><a href="#">Rum</a>
                 <!-- List of tequila drinks -->
                 <ul>
-                    <li class="onClick"><span class = "hide">Blue Hawaii</span><a href="#">Mai Tai</a></li>
-                    <li class="onClick"><span class = "hide"></span><a href="#"></a></li>
+                    <li class="onClick"><span class="hide">Blue Hawaii</span><a href="#">Mai Tai</a></li>
+                    <li class="onClick"><span class="hide"></span><a href="#"></a></li>
                 </ul>
             </li>
         </ul>
@@ -66,24 +65,27 @@
     </nav>
 
     <!-- Content Container where data will be appended -->
-    <div id="container">        
+    <div id="container">
         <div class="row">
             <!-- Drink data will append here -->
-            <div class = "col 6" id="drinkContent"><h2></h2>
+            <div class="col 6" id="drinkContent">
+                <h2></h2>
                 <div id="overlay"></div>
             </div>
 
             <!-- Movie data will append here -->
-            <div class = "col 6" id="movieContent"><h2></h2>
-                <div id="overlay"></div>
-            </div>            
+            <div class="col 6" id="movieContent">
+                <h2></h2>
+                <!--<div id="overlay"></div>-->
+            </div>
         </div>
     </div>
-    
+
     <!-- Outside sources that were used -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://kit.fontawesome.com/2a07effbf4.js" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>

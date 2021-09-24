@@ -1,5 +1,5 @@
 var drinkAPI = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-var movieAPI = "http://www.omdbapi.com/?apikey=90c34782&t=";
+var movieAPI = "https://www.omdbapi.com/?apikey=90c34782&t=";
 
 // Fetches cocktail
 function fetchData() {
@@ -22,13 +22,13 @@ function fetchData() {
 
   // This gathers the data we want and appends it all to the web page by creating new elements within the HTML
   .then(function (data) {
-
+    console.log(data);
     // Sets variables for the drink name and for the HTML element we append to
     var drinkContent = data.drinks[0];
     var contentDiv = document.getElementById("drinkContent");
 
     
-    // We used .childNodes for the collection of all the drinks selected by a user when they click the list
+    // Uses .childNodes for the collection of all the drinks selected by a user when they click the list
     // .length is the number of drinks 
     // .length > 1, used 1 because the first item of the index of DrinkContent is Blockbusters and Beverages, 
     // we need to keep it; then use .removeChild to remove the previous child (drink's name, img, ingredients)
@@ -45,32 +45,45 @@ function fetchData() {
     // Gets and renders drink image
     var drinkImage = document.createElement("img");
     drinkImage.src = drinkContent.strDrinkThumb;
-    contentDiv.appendChild(drinkImage);
+    contentDiv.appendChild(drinkImage);    
 
-    // Gets and renders drink ingredients 
+    // Gets and renders drink ingredients, also appends the text "Ingredients" above the ingredients
+    var firstNote = document.createElement("h5");
+      firstNote.textContent = "Ingredients:";           
     var drinkIngredients = document.createElement("ul");
+    drinkIngredients.appendChild(firstNote);
     contentDiv.appendChild(drinkIngredients);
     var getIngredients = Object.keys(drinkContent)
-    // We used filter method to create an array filled with all ingredients available from API, and return the ones which are null
+    // Uses filter method to create an array filled with all ingredients available from API, and return the ones which are null
     .filter(function (ingredient) {
       return ingredient.indexOf("strIngredient") == 0;
     })
-    // We used reduce method to execute the function for each value of the array of drink ingredients, returns a single value which is the function's accumulated result
+    // Uses reduce method to execute the function for each value of the array of drink ingredients, returns a single value which is the function's accumulated result
     .reduce(function (ingredients, ingredient) {
       if (drinkContent[ingredient] != null) {
         ingredients[ingredient] = drinkContent[ingredient];
       }
       return ingredients;
     }, {});
-
-    // We created new element "li" in html to append the list of ingredients that are available from drink API 
+    
+    // Creates new element "li" in html to append the list of ingredients that are available from drink API 
     for (var key in getIngredients) {
       var value = getIngredients[key];
-      listIngre = document.createElement("li");
+      listIngre = document.createElement("li");      
       listIngre.innerHTML = value;
       drinkIngredients.appendChild(listIngre);
     }
+    // Gets and renders drink instructions
+    var drinkInst = drinkContent.strInstructions;
+    var instructions = document.createElement("p");
+    var note = document.createElement("h5");
+    note.textContent = "Instructions:";
+    instructions.innerHTML = drinkInst;
+    contentDiv.appendChild(note);
+    contentDiv.appendChild(instructions);
+    
   });
+    
 }
 
 // Fetches movie
@@ -95,11 +108,11 @@ function fetchDataMovie() {
   // This gathers the data we want and appends it all to the web page by creating new elements within the HTML
   .then(function (data) {
   
-    // Sets variables for the drink name and for the HTML element we append to
+    // Sets variables for the movie name and for the HTML element we append to
     var movieContent = data.Title;
     var movieDiv = document.getElementById("movieContent");
 
-    // ???
+    // loops through the movies which were displayed previously and only keep the current one
     while (movieDiv.childNodes.length > 1) {
       movieDiv.removeChild(movieDiv.lastChild);
     }
@@ -122,7 +135,10 @@ function fetchDataMovie() {
  
     // Gets and renders the plot of movie
     var moviePlot = document.createElement("p");
+    var thirdNote = document.createElement("h5");
+    thirdNote.textContent = "Plot:"
     moviePlot.innerHTML = data.Plot;
+    movieDiv.appendChild(thirdNote);
     movieDiv.appendChild(moviePlot);
   });
 }
