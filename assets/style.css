@@ -7,29 +7,31 @@ body {
 	color: #ffffff;
 	font-family: 'Open Sans', sans-serif;
 	width: 100%;
-	}
-
+}
 
 h2 {
 	text-align: left;
 	font-size: 40px;
 	background-color: black;
 }
-
+h5 {
+	text-decoration: underline;
+}
 p {
+	display: block;
 	text-align: center;
 	font-size: 20px;
-	background-color:transparent;
+	background-color: transparent;
+	width: 200px;
 }
 
 i { 
-	padding: 100 px
+	padding: 10px
 }
 	
 a {
 	color: #FFF;
 }
-
 
 #container {
 	margin: 0 auto;
@@ -45,46 +47,43 @@ nav ul {
     margin: 0;
 	list-style: none;
 	position: relative;
-	}
+}
 	
 nav ul li {
-	display:inline-block;
+	display: inline-block;
 	background-color: #E64A19;
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
 }
 
+nav a {
+	display: block;
+	padding: 0 10px;	
+	color: #FFF;
+	font-size: 20px;
+	line-height: 60px;
+	text-decoration: none;
+}
 
 nav ul ul {
 	display: none;
 	position: absolute; 
 	top: 60px; 
 }
-	
 
 nav ul li:hover > ul {
-	display:inherit;
+	display: inherit;
 }
-	
 
 nav ul ul li {
-	width:150px;
-	float:none;
-	display:list-item;
+	width: 150px;
+	float: none;
+	display: list-item;
 	position: relative;
 }
 
 nav ul ul ul li {
 	position: relative;
-	top:-60px; 
-	left:170px;
+	top: -60px; 
+	left: 170px;
 }
 
 #overlay {
@@ -97,17 +96,6 @@ nav ul ul ul li {
 	z-index: -1;
 }
 
-/* #drink {
-	max-width: 350px;
-	text-align: center;
-	color: #fff;
-	background-color: black
-} */
-
-/* .drink-card {
-	position:
-} */
-
 #drinkContent img {
 	padding: 5px;
 	width: 200px;
@@ -117,41 +105,30 @@ nav ul ul ul li {
 #movieContent img {
 	padding: 5px;
 	margin-left: 20px;
+	width: 200px;
 }
 
 #drinkContent {
-	display:block;
+	display: block;
 	border-radius: 8px;
-	background-color:transparent;
-	color:blue;
+	background-color: transparent;
+	color: white;
 	text-align: center;
 }
 
 #movieContent {
 	display: block;
 	border-radius: 8px;
-	background-color:transparent;
-	color:blue;
-	text-align: center;
-}
-
-#drinkContent h3 {
-	font-size: 20px;
-	text-transform: uppercase;
+	background-color: transparent;
+	color: white;
 	text-align: center;
 }
 
 #drink ul {
 	list-style: none;
-
 }
 
 #drinkContent li {
 	font-size: 15px;
 	font-weight: bolder;
 }
-
-
-
-
-
