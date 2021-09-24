@@ -27,8 +27,8 @@ function fetchData() {
     var drinkContent = data.drinks[0];
     var contentDiv = document.getElementById("drinkContent");
 
-    // ???
-    // used .childNodes for the collection of all the drinks selected by a user when they click the list
+    
+    // We used .childNodes for the collection of all the drinks selected by a user when they click the list
     // .length is the number of drinks 
     // .length > 1, used 1 because the first item of the index of DrinkContent is Blockbusters and Beverages, 
     // we need to keep it; then use .removeChild to remove the previous child (drink's name, img, ingredients)
@@ -51,11 +51,11 @@ function fetchData() {
     var drinkIngredients = document.createElement("ul");
     contentDiv.appendChild(drinkIngredients);
     var getIngredients = Object.keys(drinkContent)
-    // ???
+    // We used filter method to create an array filled with all ingredients available from API, and return the ones which are null
     .filter(function (ingredient) {
       return ingredient.indexOf("strIngredient") == 0;
     })
-    // ???
+    // We used reduce method to execute the function for each value of the array of drink ingredients, returns a single value which is the function's accumulated result
     .reduce(function (ingredients, ingredient) {
       if (drinkContent[ingredient] != null) {
         ingredients[ingredient] = drinkContent[ingredient];
@@ -63,7 +63,7 @@ function fetchData() {
       return ingredients;
     }, {});
 
-    // ???
+    // We created new element "li" in html to append the list of ingredients that are available from drink API 
     for (var key in getIngredients) {
       var value = getIngredients[key];
       listIngre = document.createElement("li");
