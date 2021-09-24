@@ -1,134 +1,164 @@
+/* font-family: 'Abril Fatface', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Archivo Black', sans-serif;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Stick No Bills', sans-serif; */
+
+*{
+	margin:0;
+	padding:0;
+	box-shadow: border-box;
+}
+
+/* :root{
+	--font:'Open Sans', sans-serif;
+	/* --bg: #14161af6; */
+	/* --main-font-color: white;
+} */ 
+
 body {
-    background-image: url('./images/martini.jpg');
-	background-size: cover;
-	background-color: black;
-	background-repeat: no-repeat;
-	line-height: 32px;
+	background-color:#080808;
 	color: #ffffff;
-	font-family: 'Open Sans', sans-serif;
-	width: 100%;
 }
 
-h2 {
-	text-align: left;
-	font-size: 40px;
-	background-color: black;
-}
-h5 {
-	text-decoration: underline;
-}
-p {
-	display: block;
-	text-align: center;
-	font-size: 20px;
-	background-color: transparent;
-	width: 200px;
-}
-
-i { 
-	padding: 10px
+.center{
+	display:flex;
+	justify-content: center;
+	align-items:center;
 }
 	
-a {
-	color: #FFF;
-}
-
-#container {
-	margin: 0 auto;
-}
-
 nav {
-	margin: 40px 0;
-	background-color: #E64A19;
+	margin: 10px 0;
+	background:black;
+	text-transform: uppercase;
 }
 
 nav ul {
 	padding: 0;
     margin: 0;
 	list-style: none;
-	position: relative;
 }
 	
-nav ul li {
-	display: inline-block;
-	background-color: #E64A19;
-}
-
-nav a {
-	display: block;
-	padding: 0 10px;	
-	color: #FFF;
-	font-size: 20px;
-	line-height: 60px;
-	text-decoration: none;
+nav ul li a{
+	background-color: black;
+	text-align: left;
 }
 
 nav ul ul {
 	display: none;
-	position: absolute; 
-	top: 60px; 
+	position: absolute;  
 }
+	
 
 nav ul li:hover > ul {
-	display: inherit;
+	display:inherit;
+	background-color:rgb(61, 61, 61);
 }
+	
 
 nav ul ul li {
-	width: 150px;
-	float: none;
-	display: list-item;
+	float:none;
+	display:list-item;
 	position: relative;
 }
 
-nav ul ul ul li {
-	position: relative;
-	top: -60px; 
-	left: 170px;
+
+.main{
+	padding:10px;
+	width: 95%;
+	height:750px;
+	margin: 0 auto;
+	display:flex;
+	align-items: center;
+	border:1px solid rgba(0, 0, 0, 0.87);
+	font-family: 'Archivo Black', sans-serif;
+	text-transform: uppercase;
 }
 
-#overlay {
-	background-image: url('images/martini.jpg');
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
+.main::before, main::after{
+	content:'';
+	width:80%;
+	height:70%;
+	position: absolute;
+	bottom: 0;
+	z-index; -10;
+}
+
+.box h1{
+	font-size: 7.5em;
+	font-family: 'Archivo Black', sans-serif;
+}
+
+
+.box h2{
+	font-size: 6.5em;
+	color:grey;
+}
+
+.box p{
+	font-size: 14px;
+	font-family: sans-serif;
+	text-align:center;
+	padding-bottom: 50px;
+}
+
+.main img{
+	padding-top: 125px;
+	width: 900px;
+	height:700px;
+	position: absolute;
+	right: 10px;
+	z-index:-10;
+	bottom:30px
+}
+
+
+.row {
+	padding-top: 100px;
+	display: grid;
+	justify-content:center;
+	grid-template-columns: 400px 400px;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 #drinkContent img {
-	padding: 5px;
 	width: 200px;
-	margin-left: 20px;
+	height: 200px;
 }
 
 #movieContent img {
-	padding: 5px;
-	margin-left: 20px;
 	width: 200px;
+	height: 300px;
 }
 
-#drinkContent {
-	display: block;
-	border-radius: 8px;
-	background-color: transparent;
-	color: white;
+h3 {
+	text-transform: uppercase;
+	font-size: 20px;
+} 
+
+
+#movieContent p, ul, li{
+	padding:4px;
+	display:block;
+	color:white;
 	text-align: center;
-}
-
-#movieContent {
-	display: block;
-	border-radius: 8px;
-	background-color: transparent;
-	color: white;
-	text-align: center;
-}
-
-#drink ul {
-	list-style: none;
-}
-
-#drinkContent li {
 	font-size: 15px;
-	font-weight: bolder;
 }
+
+
+/* #movieContent ul {
+	display:block;
+	color:white;
+	text-align: center;
+	font-size: 15px;
+}
+
+#movieContent li {
+	display:block;
+	color:white;
+	text-align: center;
+	font-size: 15px;
+} */ */
