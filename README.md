@@ -22,3 +22,6 @@ An application using APIs (www.thecocktaildb.com) & (www.omdbapi.com) allowing u
 ##Links
 
 ##Preview 
+!(https://user-images.githubusercontent.com/87405979/134758604-cfc1ea86-f5a8-4514-b2b1-86ba21892d52.jpg)
+!(https://user-images.githubusercontent.com/87405979/134758610-16fcce4f-a85c-4fa7-9b6e-defd4a6421a6.png)
+ 
