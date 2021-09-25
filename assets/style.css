@@ -1,10 +1,3 @@
-/* font-family: 'Abril Fatface', cursive;
-font-family: 'Anton', sans-serif;
-font-family: 'Archivo Black', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Fjalla One', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Stick No Bills', sans-serif; */
 
 *{
 	margin:0;
@@ -12,25 +5,22 @@ font-family: 'Stick No Bills', sans-serif; */
 	box-shadow: border-box;
 }
 
-/* :root{
-	--font:'Open Sans', sans-serif;
-	/* --bg: #14161af6; */
-	/* --main-font-color: white;
-} */ 
 
 body {
 	background-color:#080808;
 	color: #ffffff;
 }
 
+/* centers main page content on screen */
 .center{
 	display:flex;
 	justify-content: center;
 	align-items:center;
 }
-	
+
+/* navigation bar with drop down menu*/
 nav {
-	margin: 10px 0;
+	margin: 5px 0;
 	background:black;
 	text-transform: uppercase;
 }
@@ -48,7 +38,7 @@ nav ul li a{
 
 nav ul ul {
 	display: none;
-	position: absolute;  
+	position: absolute;
 }
 	
 
@@ -64,7 +54,7 @@ nav ul ul li {
 	position: relative;
 }
 
-
+/*sectioning & sizing for main page*/
 .main{
 	padding:10px;
 	width: 95%;
@@ -72,7 +62,6 @@ nav ul ul li {
 	margin: 0 auto;
 	display:flex;
 	align-items: center;
-	border:1px solid rgba(0, 0, 0, 0.87);
 	font-family: 'Archivo Black', sans-serif;
 	text-transform: uppercase;
 }
@@ -86,12 +75,14 @@ nav ul ul li {
 	z-index; -10;
 }
 
+/*Title sizing*/
 .box h1{
 	font-size: 7.5em;
 	font-family: 'Archivo Black', sans-serif;
+	padding-top: 40px;
 }
 
-
+/*Title sizing*/
 .box h2{
 	font-size: 6.5em;
 	color:grey;
@@ -104,17 +95,18 @@ nav ul ul li {
 	padding-bottom: 50px;
 }
 
+/* maing page image */
 .main img{
-	padding-top: 125px;
+	padding-top: 50px;
 	width: 900px;
 	height:700px;
 	position: absolute;
 	right: 10px;
 	z-index:-10;
-	bottom:30px
+	bottom:40px;
 }
 
-
+/* cocktail & movie content  */
 .row {
 	padding-top: 100px;
 	display: grid;
@@ -122,24 +114,42 @@ nav ul ul li {
 	grid-template-columns: 400px 400px;
 	text-align: center;
 	text-transform: uppercase;
+	grid-gap: 100px;
 }
 
+/* sizes drink image appropriately*/
 #drinkContent img {
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 300px;
 }
 
+/* drink ingredients and instructions  */
+#drinkContent li {
+	padding: 0;
+	display:block;
+	color:white;
+	text-align: center;
+	font-size: 15px;
+}
+
+/* header for drink & movie name*/
+h3{
+	font-size: 28px;
+} 
+
+/* sizes movie image appropriately*/
 #movieContent img {
 	width: 200px;
 	height: 300px;
 }
 
-h3 {
+/*ingredient, instructions, and plot headers */
+h4, h5 {
 	text-transform: uppercase;
 	font-size: 20px;
 } 
 
-
+/*sizing and styling for moving content: ratings & plot*/
 #movieContent p, ul, li{
 	padding:4px;
 	display:block;
@@ -147,18 +157,3 @@ h3 {
 	text-align: center;
 	font-size: 15px;
 }
-
-
-/* #movieContent ul {
-	display:block;
-	color:white;
-	text-align: center;
-	font-size: 15px;
-}
-
-#movieContent li {
-	display:block;
-	color:white;
-	text-align: center;
-	font-size: 15px;
-} */ */
