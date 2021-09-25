@@ -23,6 +23,8 @@ An application using APIs (www.thecocktaildb.com) & (www.omdbapi.com) allowing u
 
 
 ##Links
+*https://github.com/konnerhartman/Fetch-A-Buzz
+*https://konnerhartman.github.io/Fetch-A-Buzz/
 
 ##Preview 
 !(https://user-images.githubusercontent.com/87405979/134758604-cfc1ea86-f5a8-4514-b2b1-86ba21892d52.jpg)
