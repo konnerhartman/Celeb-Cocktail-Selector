@@ -15,75 +15,89 @@ function fetchData() {
     redirect: 'follow',
   })
 
-  // Returns our response in JSON
-  .then(function (response) {
-    return response.json();
-  })
-
-  // This gathers the data we want and appends it all to the web page by creating new elements within the HTML
-  .then(function (data) {
-    console.log(data);
-    // Sets variables for the drink name and for the HTML element we append to
-    var drinkContent = data.drinks[0];
-    var contentDiv = document.getElementById("drinkContent");
-
-    
-    // Uses .childNodes for the collection of all the drinks selected by a user when they click the list
-    // .length is the number of drinks      
-    // we need to keep that drink to be displayed on the page; then use .removeChild to remove the previous child (drink's name, img, ingredients)
-    while (contentDiv.childNodes.length > 1) {
-      contentDiv.removeChild(contentDiv.lastChild);
-    }
-
-    // Gets and renders drink name
-    var drinkTitle = drinkContent.strDrink;
-    var title = document.createElement("h3");
-    title.innerHTML = drinkTitle;
-    contentDiv.appendChild(title);
-
-    // Gets and renders drink image
-    var drinkImage = document.createElement("img");
-    drinkImage.src = drinkContent.strDrinkThumb;
-    contentDiv.appendChild(drinkImage);    
-
-    // Gets and renders drink ingredients, also appends the text "Ingredients" above the ingredients
-    var firstNote = document.createElement("h4");
-      firstNote.textContent = "Ingredients:";           
-    var drinkIngredients = document.createElement("ul");
-    drinkIngredients.appendChild(firstNote);
-    contentDiv.appendChild(drinkIngredients);
-    var getIngredients = Object.keys(drinkContent)
-    // Uses filter method to create an array filled with all ingredients available from API, and return the ones which are null
-    .filter(function (ingredient) {
-      return ingredient.indexOf("strIngredient") == 0;
+    // Returns our response in JSON
+    .then(function (response) {
+      return response.json();
     })
-   
-    // only displays ingredients with a value and eliminates those marked "null"
-    .reduce(function (ingredients, ingredient) {
-      if (drinkContent[ingredient] != null) {
-        ingredients[ingredient] = drinkContent[ingredient];
+
+    // This gathers the data we want and appends it all to the web page by creating new elements within the HTML
+    .then(function (data) {
+      console.log(data);
+      // Sets variables for the drink name and for the HTML element we append to
+      var drinkContent = data.drinks[0];
+      var contentDiv = document.getElementById("drinkContent");
+
+
+      // Uses .childNodes for the collection of all the drinks selected by a user when they click the list
+      // .length is the number of drinks      
+      // we need to keep that drink to be displayed on the page; then use .removeChild to remove the previous child (drink's name, img, ingredients)
+      while (contentDiv.childNodes.length > 0) {
+        contentDiv.removeChild(contentDiv.lastChild);
       }
-      return ingredients;
-    }, {});
-    
-    // Creates new element "li" in html to append the list of ingredients that are available from drink API 
-    for (var key in getIngredients) {
-      var value = getIngredients[key];
-      listIngre = document.createElement("li");      
-      listIngre.innerHTML = value;
-      drinkIngredients.appendChild(listIngre);
-    }
-    // Gets and renders drink instructions
-    var drinkInst = drinkContent.strInstructions;
-    var instructions = document.createElement("p");
-    var note = document.createElement("h5");
-    note.textContent = "Instructions:";
-    instructions.innerHTML = drinkInst;
-    contentDiv.appendChild(note);
-    contentDiv.appendChild(instructions);
-    
-  });
-    
+
+      // Gets and renders drink name
+      var drinkName = drinkContent.strDrink;
+      var title = document.createElement("h3");
+      title.innerHTML = drinkName;
+      contentDiv.appendChild(title);
+
+      // Gets and renders drink image
+      var drinkImage = document.createElement("img");
+      drinkImage.src = drinkContent.strDrinkThumb;
+      contentDiv.appendChild(drinkImage);
+
+      // Gets and renders drink ingredients, also appends the text "Ingredients" above the ingredients
+      var firstNote = document.createElement("h5");
+      firstNote.textContent = "Ingredients:";
+      var drinkIngredients = document.createElement("ul");
+      drinkIngredients.appendChild(firstNote);
+      contentDiv.appendChild(drinkIngredients);
+      var getIngredients = Object.keys(drinkContent)
+        // Uses filter method to create an array filled with all ingredients available from API excluding all other keys, 
+        // and return those keys that contains "strIngredient".
+        .filter(function (ingredient) {
+          // console.log(ingredient);
+          // console.log(ingredient.indexOf("strIngredient"))
+          return ingredient.indexOf("strIngredient") == 0;
+
+        })
+        // Uses reduce method to check whether each value in the array (drink ingredients) passes the if statement or not, 
+        // then returns a single accumulator (ingredients).
+        .reduce(function (ingredients, ingredient) {
+          //  console.log(ingredients);
+          if (drinkContent[ingredient] != null) {
+            ingredients[ingredient] = drinkContent[ingredient];
+          }
+          return ingredients;
+        }, {});
+
+      // Creates new element "li" in html to append the list of ingredients that are available from drink API 
+      // Creates a for loop to loop through the list of all ingredients sorted out from the function above (getIngredients)
+      // The list is stored in var ingreProperty
+
+      var ingreProperty = Object.keys(getIngredients);
+
+      for (var i = 0, length = ingreProperty.length; i < length; i++) {
+        var value = getIngredients[ingreProperty[i]];
+        listIngre = document.createElement("li");
+        listIngre.innerHTML = value;
+        drinkIngredients.appendChild(listIngre);
+      }
+
+      // Gets and renders drink instructions
+      var drinkInst = drinkContent.strInstructions;
+      var instructions = document.createElement("p");
+      var note = document.createElement("h5");
+      note.textContent = "Instructions:";
+      instructions.innerHTML = drinkInst;
+      contentDiv.appendChild(note);
+      contentDiv.appendChild(instructions);
+
+    })
+    .then(function () {
+      document.getElementById("content").scrollIntoView();
+    })
+
 }
 
 // Fetches movie
@@ -100,54 +114,51 @@ function fetchDataMovie() {
     redirect: 'follow',
   })
 
-  // Returns our response in JSON
-  .then(function (response) {
-    return response.json();
-  })
+    // Returns our response in JSON
+    .then(function (response) {
+      return response.json();
+    })
 
-  // This gathers the data we want and appends it all to the web page by creating new elements within the HTML
-  .then(function (data) {
-  
-    // Sets variables for the movie name and for the HTML element we append to
-    var movieContent = data.Title;
-    var movieDiv = document.getElementById("movieContent");
+    // This gathers the data we want and appends it all to the web page by creating new elements within the HTML
+    .then(function (data) {
 
-    // loops through the movies which were displayed previously and only keep the current one
-    while (movieDiv.childNodes.length > 1) {
-      movieDiv.removeChild(movieDiv.lastChild);
-    }
+      // Sets variables for the movie name and for the HTML element we append to
+      var movieContent = data.Title;
+      var movieDiv = document.getElementById("movieContent");
 
-    // Gets and renders movie title
-    var movieName = movieContent;
-    var movieTitle = document.createElement("h3");
-    movieTitle.innerHTML = movieName;
-    movieDiv.appendChild(movieTitle);
+      // loops through the movies which were displayed previously and only keep the current one
+      while (movieDiv.childNodes.length > 1) {
+        movieDiv.removeChild(movieDiv.lastChild);
+      }
 
-    // Gets and renders movie poster
-    var moviePoster = document.createElement("img");
-    moviePoster.src = data.Poster
-    movieDiv.appendChild(moviePoster);
- 
-    // Gets and renders the plot of movie
-    var moviePlot = document.createElement("p");
-    var thirdNote = document.createElement("h5");
-    thirdNote.textContent = "Plot:"
-    moviePlot.innerHTML = data.Plot;
-    movieDiv.appendChild(thirdNote);
-    movieDiv.appendChild(moviePlot);
+      // Gets and renders movie title
+      var movieName = movieContent;
+      var movieTitle = document.createElement("h3");
+      movieTitle.innerHTML = movieName;
+      movieDiv.appendChild(movieTitle);
 
-    // Gets and renders Rotten Tomato rating
-    var movieRating = document.createElement("p");
-    movieRating.innerHTML = "Rotten Tomato: " + data.Ratings[1].Value;
-    movieDiv.appendChild(movieRating);
-  })
-  
-  // When a drink is clicked, page scrolls to content of the drink & movie
-  .then(function() {
-    document.getElementById("content").scrollIntoView();
-  })
+      // Gets and renders movie poster
+      var moviePoster = document.createElement("img");
+      moviePoster.src = data.Poster
+      movieDiv.appendChild(moviePoster);
+
+      // Gets and renders Rotten Tomato rating
+      var movieRating = document.createElement("p");
+      movieRating.innerHTML = "Rotten Tomato: " + data.Ratings[1].Value;
+      movieDiv.appendChild(movieRating);
+
+      // Gets and renders the plot of movie
+      var moviePlot = document.createElement("p");
+      var thirdNote = document.createElement("h5");
+      thirdNote.textContent = "Plot:"
+      moviePlot.innerHTML = data.Plot;
+      movieDiv.appendChild(thirdNote);
+      movieDiv.appendChild(moviePlot);
+    });
 }
 
 // When a drink is clicked, both functions run
 $('.onClick').on('click', fetchData);
 $('.onClick').on('click', fetchDataMovie);
+
+
