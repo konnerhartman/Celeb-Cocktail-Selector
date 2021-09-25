@@ -29,17 +29,16 @@ function fetchData() {
 
     
     // Uses .childNodes for the collection of all the drinks selected by a user when they click the list
-    // .length is the number of drinks 
-    // .length > 1, used 1 because the first item of the index of DrinkContent is Blockbusters and Beverages, 
-    // we need to keep it; then use .removeChild to remove the previous child (drink's name, img, ingredients)
+    // .length is the number of drinks      
+    // we need to keep that drink to be displayed on the page; then use .removeChild to remove the previous child (drink's name, img, ingredients)
     while (contentDiv.childNodes.length > 1) {
       contentDiv.removeChild(contentDiv.lastChild);
     }
 
     // Gets and renders drink name
-    var drinkName = drinkContent.strDrink;
+    var drinkTitle = drinkContent.strDrink;
     var title = document.createElement("h3");
-    title.innerHTML = drinkName;
+    title.innerHTML = drinkTitle;
     contentDiv.appendChild(title);
 
     // Gets and renders drink image
@@ -48,7 +47,7 @@ function fetchData() {
     contentDiv.appendChild(drinkImage);    
 
     // Gets and renders drink ingredients, also appends the text "Ingredients" above the ingredients
-    var firstNote = document.createElement("h5");
+    var firstNote = document.createElement("h4");
       firstNote.textContent = "Ingredients:";           
     var drinkIngredients = document.createElement("ul");
     drinkIngredients.appendChild(firstNote);
@@ -58,7 +57,8 @@ function fetchData() {
     .filter(function (ingredient) {
       return ingredient.indexOf("strIngredient") == 0;
     })
-    // Uses reduce method to execute the function for each value of the array of drink ingredients, returns a single value which is the function's accumulated result
+   
+    // only displays ingredients with a value and eliminates those marked "null"
     .reduce(function (ingredients, ingredient) {
       if (drinkContent[ingredient] != null) {
         ingredients[ingredient] = drinkContent[ingredient];
@@ -127,11 +127,6 @@ function fetchDataMovie() {
     var moviePoster = document.createElement("img");
     moviePoster.src = data.Poster
     movieDiv.appendChild(moviePoster);
-
-    // Gets and renders Rotten Tomato rating
-    var movieRating = document.createElement("p");
-    movieRating.innerHTML = "Rotten Tomato: " + data.Ratings[1].Value;
-    movieDiv.appendChild(movieRating);
  
     // Gets and renders the plot of movie
     var moviePlot = document.createElement("p");
@@ -140,7 +135,17 @@ function fetchDataMovie() {
     moviePlot.innerHTML = data.Plot;
     movieDiv.appendChild(thirdNote);
     movieDiv.appendChild(moviePlot);
-  });
+
+    // Gets and renders Rotten Tomato rating
+    var movieRating = document.createElement("p");
+    movieRating.innerHTML = "Rotten Tomato: " + data.Ratings[1].Value;
+    movieDiv.appendChild(movieRating);
+  })
+  
+  // When a drink is clicked, page scrolls to content of the drink & movie
+  .then(function() {
+    document.getElementById("content").scrollIntoView();
+  })
 }
 
 // When a drink is clicked, both functions run
