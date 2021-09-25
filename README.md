@@ -17,6 +17,9 @@ An application using APIs (www.thecocktaildb.com) & (www.omdbapi.com) allowing u
 *https://www.w3schools.com/jsref/prop_node_childnodes.asp
 *https://www.w3schools.com/css/css_navbar.asp
 *https://www.w3schools.com/jsref/event_onclick.asp
+*https://www.w3schools.com/xml/dom_nodes_add.asp
+*https://www.w3schools.com/xml/tryit.asp?filename=try_dom_createelement
+*https://w3collective.com/fetch-display-api-data-javascript/
 
 
 ##Links
