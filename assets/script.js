@@ -140,7 +140,11 @@ function fetchDataMovie() {
     moviePlot.innerHTML = data.Plot;
     movieDiv.appendChild(thirdNote);
     movieDiv.appendChild(moviePlot);
-  });
+  })
+
+  .then(function() {
+    document.getElementById("content").scrollIntoView();
+  })
 }
 
 // When a drink is clicked, both functions run
